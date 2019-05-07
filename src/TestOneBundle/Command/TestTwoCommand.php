@@ -19,6 +19,8 @@ class TestTwoCommand extends Command {
     }
 
     protected function execute(InputInterface $input, OutputInterface $output) {
+		(new ConnectorSales())->sendData('http://example.com/sales', (new ManagerSales())->findAll());
+		(new ConnectorFinance())->sendData('http://example.com/finance', (new ManagerFinance())->findAll());
     }
 
 }
