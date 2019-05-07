@@ -21,6 +21,9 @@ class TestOneCommand extends Command {
     }
 
     protected function execute(InputInterface $input, OutputInterface $output) {
+		(new ConnectorProduct())->sendData('http://example.com/product', (new ManagerProduct())->findAll());
+		(new ConnectorCustomer())->sendData('http://example.com/customer', (new ManagerCustomer())->findAll());
+		(new ConnectorCart())->sendData('http://example.com/cart', (new ManagerCart())->findAll());
     }
 
 }
